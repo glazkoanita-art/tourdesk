@@ -9,6 +9,7 @@ import {validateTour} from './validation.mjs';
 import {parseText} from './parser.mjs';
 import {fetchSource} from './fetchSource.mjs';
 import {extractPage} from './adapters/index.mjs';
+import {canonicalInterHolidayUrl,interHoliday} from './adapters/interHoliday.mjs';
 import {syncTour,checkDue} from './sync.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../public');
@@ -80,8 +81,12 @@ async function route(req,res){
     const b=await readJson(req);
     let result;
     if(b.mode==='url'){
-      const page=await fetchSource(String(b.url||''));
-      result=extractPage(page);
+      const originalUrl=String(b.url||'');
+      let requestUrl=originalUrl;
+      try{const parsed=new URL(originalUrl);if(interHoliday.matches(parsed.hostname.toLowerCase()))requestUrl=canonicalInterHolidayUrl(originalUrl)}
+      catch(e){if(e?.message==='Неверная ссылка Inter Holiday')throw e}
+      const page=await fetchSource(requestUrl);
+      result=extractPage({...page,url:originalUrl});
     }else if(b.mode==='text'){
       result=parseText(String(b.text||''));
     }else throw fail(400,'Неизвестный способ разбора');
