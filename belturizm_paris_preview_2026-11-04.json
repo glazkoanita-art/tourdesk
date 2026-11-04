@@ -1,0 +1,139 @@
+{
+  "observation_date": "2026-11-04",
+  "evidence": "Фрагмент HTML восстановлен вручную по видимым данным публичной страницы; это не оригинальный HTTP-ответ сайта",
+  "real_site_end_to_end_verified": false,
+  "source_url": "https://belturizm.by/trip/tur-v-parizh-bez-nochnykh-pereezdov/",
+  "tour": {
+    "title": "Тур в Париж без ночных переездов",
+    "country": "Франция",
+    "route": "Выезд в ЕС — Берлин — Амстердам, Брюссель — Париж — Париж — Кёльн — Познань, Приезд в Минск",
+    "operator_name": "Белтуризм",
+    "source_url": "https://belturizm.by/trip/tur-v-parizh-bez-nochnykh-pereezdov/",
+    "tour_type": "Экскурсионный",
+    "duration": "7 дней / 6 ночей",
+    "days": 7,
+    "nights": 6,
+    "transport": "Автобус",
+    "hotel": "Гостиницы по маршруту (категория не указана)",
+    "meals": "Завтраки",
+    "summary": "Тур без ночных переездов по Франции. В программе: 2 дня в Париже Амстердам, Берлин, Валансьен, Кёльн, Брюссель.",
+    "description": "Тур без ночных переездов по Франции. В программе: 2 дня в Париже Амстердам, Берлин, Валансьен, Кёльн, Брюссель.",
+    "itinerary": "День 1 :\nВыезд в ЕС\nОтправление из Минска. Транзит по Польше.\nДень 2 :\nБерлин\nЗавтрак, экскурсия по Берлину.\nДень 3 :\nАмстердам, Брюссель\nЭкскурсии.\nДень 4 :\nПариж\nПрогулка по городу.\nДень 5 :\nПариж\nСвободное время.\nДень 6 :\nКёльн\nПутешествие.\nДень 7 :\nПознань, Приезд в Минск\nВозвращение.",
+    "included": "Проезд на комфортабельном автобусе;\n6 ночлегов в гостиницах с завтраками;\nСопровождение русскоговорящим гидом по маршруту.",
+    "extras": "Виза;\nСтраховка;\nОбзорные экскурсии (80 евро, обязательно);\nТопливный сбор 15 евро;\nКарта",
+    "booking_terms": "",
+    "cancellation_terms": "",
+    "notes": "Оригинальный текст анонса для сверки: Тур без ночных переездов по Франции. В программе: 2 дня в Париже Амстердам, Берлин, Валансьен, Кёльн, Брюссель. Действует минимальная цена в 430 евро. Выезды по воскресеньям.",
+    "departures": [
+      {
+        "start_date": "2026-11-15",
+        "end_date": "2026-11-21",
+        "price": 440,
+        "currency": "EUR",
+        "availability": "sold_out",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2026-11-29",
+        "end_date": "2026-12-05",
+        "price": 440,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2026-12-19",
+        "end_date": "2026-12-25",
+        "price": 440,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2027-01-02",
+        "end_date": "2027-01-08",
+        "price": 440,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2027-01-23",
+        "end_date": "2027-01-29",
+        "price": 440,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2027-02-13",
+        "end_date": "2027-02-19",
+        "price": 440,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2027-03-02",
+        "end_date": "2027-03-08",
+        "price": 460,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2027-03-21",
+        "end_date": "2027-03-27",
+        "price": 460,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2027-04-04",
+        "end_date": "2027-04-10",
+        "price": 460,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      },
+      {
+        "start_date": "2027-05-01",
+        "end_date": "2027-05-07",
+        "price": 470,
+        "currency": "EUR",
+        "availability": "available",
+        "notes": "",
+        "seats": null
+      }
+    ]
+  },
+  "sourceType": "url",
+  "adapter": "belturizm",
+  "confidence": "verified",
+  "datesComplete": false,
+  "missingFields": [
+    "Условия бронирования",
+    "Условия отмены"
+  ],
+  "warnings": [
+    "На странице написано «минимальная цена 430 евро», но минимальная цена показанных выездов — 440 EUR. Проверьте перед отправкой клиенту.",
+    "В описании указаны выезды по воскресеньям, но в календаре есть другие дни недели. Приоритет — датам календаря.",
+    "Календарь может показывать не все выезды («More Dates»). Отсутствующие даты никогда не отмечаются удалёнными на основании этой страницы.",
+    "Сайт может отображать разные валюты при разных настройках. При смене валюты относительно базы автоматическая синхронизация блокируется для проверки."
+  ],
+  "extraction": {
+    "visibleRows": 10,
+    "validRows": 10,
+    "onlyVisibleDates": true
+  }
+}

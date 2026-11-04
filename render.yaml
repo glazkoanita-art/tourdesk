@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: tourdesk
+    runtime: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm --version
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: SUPABASE_URL
+        value: https://guxkarncctfeiswevini.supabase.co
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: CRON_SECRET
+        generateValue: true
+      - key: APP_ORIGIN
+        sync: false

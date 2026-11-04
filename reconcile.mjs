@@ -1,0 +1,4 @@
+// Pure domain logic; database transaction is implemented in the SQL migration.
+export function diffDepartures(current,snapshot,{datesComplete=false}={}){
+const changes=[];const seen=new Set();for(const d of snapshot){if(!d.start_date)continue;seen.add(d.start_date);const old=current.find(x=>x.start_date===d.start_date);if(!old){changes.push({type:'date_added',date:d.start_date,new:d});continue}if(old.status==='missing')changes.push({type:'date_restored',date:d.start_date});if(d.price!==null&&d.price!==undefined&&Number(d.price)!==Number(old.price)||d.price!=null&&d.currency!==old.currency)changes.push({type:'price',date:d.start_date,old:old.price,new:d.price});if(d.end_date&&d.end_date!==old.end_date)changes.push({type:'end_date',date:d.start_date,old:old.end_date,new:d.end_date})}
+if(datesComplete&&snapshot.length)for(const old of current){if(old.status!=='missing'&&!seen.has(old.start_date))changes.push({type:'date_missing',date:old.start_date})}return changes}
