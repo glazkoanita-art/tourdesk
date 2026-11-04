@@ -51,6 +51,7 @@ export function parseInterHoliday({html,url}){
   const days=durationMatch?Number(durationMatch[1]):null;
   const nights=Number(included.match(/\b(\d{1,2})\s+ночлег(?:ов|а)?/i)?.[1])||null;
   const breakfast=Number(included.match(/\b(\d{1,2})\s+завтрак(?:ов|а)?/i)?.[1])||null;
+  const hotelLine=included.split('\n').find(x=>/ночлег/i.test(x))||'';
   const priceHint=advertisedPrice(html);
   const params=new URL(url).searchParams;
   const bookingParams=[...params.keys()].some(k=>k.startsWith('travelbooking['));
@@ -64,7 +65,7 @@ export function parseInterHoliday({html,url}){
   const summary=firstLine(highlights)||firstLine(description);
   const tour={title,country,route,operator_name:'Интер Холидей Сервис',source_url:canonical,
     tour_type:'Экскурсионный',duration:days?`${days} дней${nights?` / ${nights} ночей`:''}`:'',days,nights,
-    transport:/автобус/i.test(included+' '+mainText.slice(0,1200))?'Автобус':'',hotel:nights?`${nights} ночлегов в отелях туристического класса (2–4*)`:'',
+    transport:/автобус/i.test(included+' '+mainText.slice(0,1200))?'Автобус':'',hotel:hotelLine.slice(0,300),
     meals:breakfast?`${breakfast} завтраков`:'',summary:summary.slice(0,350),description,
     itinerary,included,extras,booking_terms:'',cancellation_terms:'',notes:priceHint?`Рекламная цена от ${priceHint}; даты, наличие мест, тариф и доплаты требуют проверки.`:'',
     departures:[],sync_enabled:false};
